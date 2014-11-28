@@ -17,14 +17,14 @@ angular.module('ContactsApp')
 	})
 	.controller('NewController', function ($scope, Contact, $location) {
 		$scope.contact = new Contact({
-			firstName: ['','text'],
-			lastName: ['','text'],
-			email: ['', 'email'],
-			homePhone: ['','tel'],
-			cellPhone:['','tel'],
-			birthday:['', 'date'],
-			website: [ '', 'url'],
-			address: [ '', 'text']
+			firstName: 	['','text'],
+			lastName:  	['','text'],
+			email: 		['', 'email'],
+			homePhone: 	['','tel'],
+			cellPhone:  ['','tel'],
+			birthday:   ['', 'date'],
+			website: 	[ '', 'url'],
+			address: 	[ '', 'text']
 		});
 
 		$scope.save = function () {
@@ -33,8 +33,6 @@ angular.module('ContactsApp')
 			} else {
 				$scope.contact.$save();
 				$location.url('/contacts');
-			}
-			
+			}	
 		};
-
-	});
+	}); 
