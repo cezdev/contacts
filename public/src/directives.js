@@ -1,16 +1,16 @@
 angular.module('ContactsApp')
 	.value('FieldTypes', {
-		text:[ 'Text', 'should be text'],
-		email:[ 'Email', 'should be a email'],
-		number:[ 'Number', 'should be a number'],
-		date:[ 'Date', 'should be a date'],
-		datetime:[ 'Datetime', 'should be a datetime'],
-		time:[ 'Time', 'should be a time'],
-		month:[ 'Month', 'should be a month'],
-		week:[ 'Week', 'should be a week'],
-		url:[ 'URL', 'should be a URL'],
-		tel:[ 'Phone Number', 'should be a phone number'],
-		color:[ 'Color', 'should be a color']
+		text:['Text', 'should be text'],
+		email:['Email', 'should be a email'],
+		number:['Number', 'should be a number'],
+		date:['Date', 'should be a date'],
+		datetime:['Datetime', 'should be a datetime'],
+		time:['Time', 'should be a time'],
+		month:['Month', 'should be a month'],
+		week:['Week', 'should be a week'],
+		url:['URL', 'should be a URL'],
+		tel:['Phone Number', 'should be a phone number'],
+		color:['Color', 'should be a color']
 	})
 	.directive('formField', function ($timeout, FieldTypes) {
 		return {
@@ -24,6 +24,10 @@ angular.module('ContactsApp')
 				required: '@'
 			},
 			link: function ($scope, element, attr) {
+				$scope.$on('record:invalid', function () {
+					$scope[$scope.field].$setDirty();
+				});
+
 				$scope.types = FieldTypes;
 
 				$scope.remove = function (field) {
@@ -65,7 +69,7 @@ angular.module('ContactsApp')
  				$scope.display = true;
  			};
 
- 			$scope.remove - function () {
+ 			$scope.remove = function () {
  				$scope.field = {};
  				$scope.display = false;
  			}; 

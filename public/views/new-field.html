@@ -10,7 +10,6 @@
 		<div class='col-sm-4'>
 			<button class='btn btn-primary' ng-click='add()'> Add </button>
 			<button class='btn btn-primary' ng-click='remove()'> Remove </button>
-
 		</div>
 	</div>
 
@@ -20,7 +19,8 @@
 				Add New Field <span class='caret'></span>
 			</button>
 			<ul class='dropdown-menu'>
-				<li ng-repeat='(k,v) in types'><a ng-click='show(k)'>{{v[0]}</li> 	
+				<li ng-repeat='(k,v) in types'><a ng-click='show(k)'>{{v[0]}}</li> 	
+			</ul>
 		</div> 	
 	</div>
 </div>
