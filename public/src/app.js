@@ -15,4 +15,3 @@ angular.module('ContactsApp', ['ngRoute', 'ngResource', 'ngMessages'])
 			});
 		$locationProvider.html5Mode(true);	
 	});
- 

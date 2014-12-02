@@ -19,7 +19,7 @@ router
 		})
 		.post(function (req, res) {
 			var contact = req.body;
-			contact.userId = req.userid;
+			contact.userId = req.user.id;
 
 			db.insert(contact, function (err, data) {
 				res.json(data);
