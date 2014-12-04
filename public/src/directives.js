@@ -10,7 +10,8 @@ angular.module('ContactsApp')
 		week:['Week', 'should be a week'],
 		url:['URL', 'should be a URL'],
 		tel:['Phone Number', 'should be a phone number'],
-		color:['Color', 'should be a color']
+		color:['Color', 'should be a color'],
+		game:['Game','should be a game you are playing']
 	})
 	.directive('formField', function ($timeout, FieldTypes) {
 		return {
